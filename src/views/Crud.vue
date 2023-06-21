@@ -1,16 +1,20 @@
 <template>
-    <div>
-      <h1>CRUD</h1>
-      <div v-for="message in messages" :key="message.id">
-        <input v-model="message.text" type="text">
-        <button @click="updateMessage(message)">update</button>
-        <button @click="deleteMessage(message.id)">delete</button>
+  <div>
+    <h1>CRUD</h1>
+    <div v-for="message in messages" :key="message.id" class="message-container">
+      <input v-model="message.text" type="text" class="message-input">
+      <div class="button-container">
+        <button @click="updateMessage(message)" class="update-button">Update</button>
+        <button @click="deleteMessage(message.id)" class="delete-button">Delete</button>
       </div>
-      <hr>
-      <input ref="newmessage" placeholder="new message ..." type="text">
-      <button @click="addNewMessage">addnew</button>
     </div>
-  </template>
+    <hr>
+    <div class="new-message-container">
+      <input ref="newmessage" placeholder="Adiciona algo..." type="text" class="new-message-input">
+      <button @click="addNewMessage" class="add-button">Adicionar Coisa</button>
+    </div>
+  </div>
+</template>
   
   <script>
   import {
@@ -92,3 +96,71 @@
   };
   </script>
   
+
+
+<style scoped>
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.message-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-container {
+  margin-left: 10px;
+}
+
+.update-button,
+.delete-button {
+  background-color: #4285f4;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.update-button:hover,
+.delete-button:hover {
+  background-color: #3367d6;
+}
+
+.new-message-container {
+  margin-top: 20px;
+}
+
+.new-message-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.add-button {
+  background-color: #4285f4;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.add-button:hover {
+  background-color: #3367d6;
+}
+</style>

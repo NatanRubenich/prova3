@@ -1,10 +1,11 @@
 <template>
-    <div>
-      <h1>Login</h1>
-      <button @click="signInWithGoogle">Sign in with Google</button>
-    </div>
-  </template>
+  <div>
+    <h1>Login</h1>
+    <button @click="signInWithGoogle" class="btn">Logar com Google</button>
+  </div>
+</template>
   
+
   <script>
   import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
   import { initializeApp } from "firebase/app";
@@ -51,4 +52,19 @@
     },
   };
   </script>
-  
+
+<style scoped>
+.btn {
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #3367d6;
+}
+</style>
