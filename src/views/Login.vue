@@ -40,6 +40,7 @@
             const authStore = useAuthStore();
             authStore.login();
             this.$router.push('/crud');
+            console.log(authStore.loggedIn);
           })
           .catch((error) => {
             const errorCode = error.code;

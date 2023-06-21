@@ -47,6 +47,8 @@
   export default {
     name: "_Crud",
     components: {
+      
+      // eslint-disable-next-line 
       isLoggedIn() {
       const authStore = useAuthStore();
       return authStore.loggedIn;    
@@ -88,7 +90,5 @@
       onUnmounted(livemessages);
     },
   };
-  console.log(isLoggedIn);
-
   </script>
   
