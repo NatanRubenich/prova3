@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "prova_3",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+    
+  }
+}
+
